@@ -30,6 +30,8 @@ My goal in the design was to create a site with a user friendly design while del
 
     [WIREFRAMES.md](WIREFRAMES.md)
 
+<br>
+
 ### Surface
 
 ## Technologies

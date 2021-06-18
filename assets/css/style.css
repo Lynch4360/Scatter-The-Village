@@ -1,8 +1,6 @@
-/* --------- Global style */
-
 body {
-    background-color: white;
-    font-family: "Raleway", sans-serif;
-    color: #445361;
-    text-align: center;
+    margin: 0;
+    line-height: 1.6;
+    color: #e5a361;
+    font-size: 1.125em;
 }
