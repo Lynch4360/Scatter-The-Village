@@ -4,65 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="desciption" content="An online memory game with the theme of a village">
-    <!-- font awesome and google fonts script-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
-    <!-- Link to bootstrap CDN-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- link to bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- link to my stylesheet-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
     <title>Scatter The Village</title>
 </head>
 
 <body>
-    <!-- Nav Structure -->
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light">
-                <a href="#" class="navbar-brand">Scatter The Village</a>
-                <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#toggleMobileMenu"
-                aria-controls="toggleMobileMenu"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="toggleMobileMenu">
-                    <ul class="navbar-nav ms-auto text-center">
-                        <li>
-                            <a href="index.html" class="nav-link">Home</a>
-                        </li>
-                        <li>
-                            <a href="play.html" class="nav-link">Play</a>
-                        </li>
-                        <li>
-                            <a href="leaderboard.html" class="nav-link">Leaderboard</a>
-                        </li>
-                    </ul>
-                </div>
+            <a href="index.html" class="navbar-brand">Scatter The Village</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu"
+                aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav text-center ms-auto">
+                    <li>
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Play</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Leaderboard</a>
+
+                    </li>
+                </ul>
+            </div>
+
+
         </nav>
     </div>
-     <div class="container">
-         <div class="row">
-             <div class="col"
-                 style="border:1px solid red;">
-             </div>
-             <div class="col"
-                 style="border:1px solid red;">
-             </div>
-             <div class="col"
-                 style="border:1px solid red;">
-             </div>
-         </div>
-     </div>
+    <section>
+        <div class="container">
+            <div class="row gap100">
+                <div class="col-md-12 text-center">
+                    <h3>Game Instructions</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, atque et enim, fugiat nam
+                        mollitia quibusdam deserunt nesciunt provident ducimus delectus. Blanditiis asperiores eaque,
+                        repellat necessitatibus sapiente totam exercitationem quod?</p>
+                    </div>
+            </div>
+        </div>
+        <div id="playbtn">
+            <a href="play.html" id="playnow"><strong>Play Now!</strong></a>
+        </div>
+    </section>
+    <section>
+
+    </section>
+    <section>
+        <div class="container">
+            <div class="row gap100">
+                <div class="col-md-4">
+                    <h3 class="text-center">Fact 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, atque et enim, fugiat nam
+                        mollitia quibusdam deserunt nesciunt provident ducimus delectus. Blanditiis asperiores eaque,
+                        repellat necessitatibus sapiente totam exercitationem quod?</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="text-center">Fact 2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, atque et enim, fugiat nam
+                            mollitia quibusdam deserunt nesciunt provident ducimus delectus. Blanditiis asperiores eaque,
+                            repellat necessitatibus sapiente totam exercitationem quod?</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="text-center">Fact 3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, atque et enim, fugiat nam
+                            mollitia quibusdam deserunt nesciunt provident ducimus delectus. Blanditiis asperiores eaque,
+                            repellat necessitatibus sapiente totam exercitationem quod?</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section-->
     <footer>
-
+        <!-- social media links-->
+        <ul class="social">
+            <li>
+                <i class="far fa-copyright"></i>Copyright Daniel Lynch 2021
+            </li>
+            <li>
+                <a href="https://github.com/Lynch4360" target="_blank" rel="noopener"
+                    aria-label="Visit my GitHub page (opens in a new tab)"><i class="fab fa-github"></i></a>
+            </li>
+        </ul>
     </footer>
-    <!-- link to javascript file -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
-</body>
+    <!-- font awesome script and link to script.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <script href="./assets/js/script.js"></script>
+</body>
 </html>

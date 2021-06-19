@@ -1,12 +1,56 @@
-html {
-    height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #e5a361;
+    font-family: 'DotGothic16', sans-serif;
+    color: #623B2D;
+    font-weight: 900;
 }
 
-body {
-    margin: 0;
-    line-height: 1.6;
-    background-color: #e5a361;
-    font-size: 1.125em;
+/* footer styling */
 
-    min-height: 100%;
+footer {
+    height: 70px;
+    padding: 50px 0px;;
+    clear: both;
+}
+
+.social {
+    text-align: center;
+}
+
+.social li {
+    display: inline;
+}
+
+.social i {
+    font-size: 160%;
+    margin: 1%;
+    color: #623B2D;
+}
+
+.gap100 {
+    padding: 70px 20px;
+}
+
+/* Play now button */
+
+#playbtn {
+    text-align: center;
+    clear: both;
+    padding-top: 50px;
+    height: 50px;
+}
+
+#playnow {
+    text-decoration: none;
+    color: inherit;
+    border: 3px solid #623b2d;
+    font-size: large;
+    padding: 30px;
+    margin: 4px 2px;
+    border-radius: 50%;
+    cursor: pointer;
 }

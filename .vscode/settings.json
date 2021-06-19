@@ -20,6 +20,7 @@
       "**/CVS": true
    },
    "files.autoSave": "off",
-   "workbench.colorTheme": "Default Dark+",
-   "editor.defaultFormatter": "HookyQR.beautify"
+   "workbench.colorTheme": "CryptoHack",
+   "editor.defaultFormatter": "HookyQR.beautify",
+   "liveServer.settings.port": 5501
 }
