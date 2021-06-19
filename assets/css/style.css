@@ -5,21 +5,22 @@
 body {
     background-color: #e5a361;
     font-family: 'DotGothic16', sans-serif;
-    color: #623B2D;
+    color: #3d2218;
     font-weight: 900;
 }
 
 p {
     color: #2B3B2D;
 }
+/* border styling */
 
 #containerBorder {
-    border:10px solid #623B2D;
+    border:10px solid #3d2218;
     margin:0;
     padding:0;
 }
 .border1 {
-    border:10px solid #623B2D;
+    border:10px solid #3d2218;
     margin:1px;
     padding:2px;}
 
@@ -28,13 +29,26 @@ p {
 
 footer {
     height: 70px;
-    padding: 50px 0px;
+    padding: 10px 0px 30px 0px;
     clear: both;
-    color: #2B3B2D;
+    background-color: #2B3B2D;
+    color: #E0FBFC;
+}
+
+ol ul {
+    padding: 0;
+}
+
+/* nav styling */
+
+header {
+    background-color: #2B3B2D;
+    width: 100%;
 }
 
 .social {
     text-align: center;
+    padding-bottom: 30px;
 }
 
 .social li {
@@ -44,7 +58,7 @@ footer {
 .social i {
     font-size: 160%;
     margin: 1%;
-    color: #623B2D;
+    color: #3d2218;
 }
 
 .gap100 {
@@ -63,10 +77,25 @@ footer {
 #playnow {
     text-decoration: none;
     color: inherit;
-    border: 3px solid #623b2d;
+    border: 3px solid #3d2218;
     font-size: x-large;
     padding: 30px;
     margin: 20px 2px;
     border-radius: 75%;
     cursor: pointer;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767.98px) {
+    .footerFont {
+        font-size: 1rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 991.98px) {
+    .footerFont {
+        font-weight: 300;
+        font-size: 0.72rem;
+    }
 }
