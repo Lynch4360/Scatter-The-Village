@@ -2,8 +2,9 @@
     margin: 0;
     padding: 0;
 }
+
 body {
-    background-color: #e5a361;
+    background-color: #EBB884;
     font-family: 'DotGothic16', sans-serif;
     color: #3d2218;
     font-weight: 900;
@@ -12,17 +13,20 @@ body {
 p {
     color: #2B3B2D;
 }
+
 /* border styling */
 
 #containerBorder {
-    border:10px solid #3d2218;
-    margin:0;
-    padding:0;
+    border: 10px solid #3d2218;
+    margin: 0;
+    padding: 0;
 }
+
 .border1 {
-    border:10px solid #3d2218;
-    margin:1px;
-    padding:2px;}
+    border: 10px solid #3d2218;
+    margin: 1px;
+    padding: 2px;
+}
 
 
 /* footer styling */
@@ -31,8 +35,12 @@ footer {
     height: 70px;
     padding: 10px 0px 30px 0px;
     clear: both;
+    position: fixed;
     background-color: #2B3B2D;
     color: #E0FBFC;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }
 
 ol ul {
@@ -44,15 +52,21 @@ ol ul {
 header {
     background-color: #2B3B2D;
     width: 100%;
+    color: #E0FBFC;
+}
+
+.navbar-light .navbar-brand {
+    color: #E0FBFC;
 }
 
 .social {
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 70px;
 }
 
 .social li {
     display: inline;
+
 }
 
 .social i {
