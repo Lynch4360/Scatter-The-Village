@@ -15,6 +15,9 @@ p {
 }
 
 /* border styling */
+img {
+    border: 9px solid #3d2218;
+}
 
 #containerBorder {
     border: 10px solid #3d2218;
@@ -25,7 +28,7 @@ p {
 .border1 {
     border: 10px solid #3d2218;
     margin: 1px;
-    padding: 2px;
+    padding: 30px;
 }
 
 
