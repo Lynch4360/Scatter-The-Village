@@ -75,4 +75,18 @@ document.addEventListener('DOMContentLoaded', () => {
       img: 'assets/images/rabbit100.png'
     }
   ]
+
+  const grid = document.querySelector('.grid')
+
+  // Making the game board
+  function makeBoard(){
+    for (let i = 0; i < gameArray.length; i++) {
+      let tile = document.createElement('img')
+      Clipboard.setAttribute('src', 'assets/images/blank100.png')
+      Clipboard.setAttribute('data-id', i)
+      grid.appendChild(tile)
+    }
+  }
+
+  makeBoard()
 })
