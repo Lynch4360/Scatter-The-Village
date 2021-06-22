@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  //card option
+  // card option
   const gameArray = [
     {
       name: 'chicken',
@@ -81,7 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
   var pickedCardsId = []
 
 
-  // Making the game board
+  /*
+  * Making the game board
+  */
   function makeBoard() {
     for (let i = 0; i < gameArray.length; i++) {
       var tile = document.createElement('img')
@@ -91,13 +93,28 @@ document.addEventListener('DOMContentLoaded', () => {
       grid.appendChild(tile)
     }
   }
-  
-// turns the cards around
+
+/*
+* checks for pairs
+*/
+function checkForMatch() {
+  var cards = document.querySelectorAll('img')
+  const optionOneId =  pickedCardsId[0]
+  const optionTwoId =  pickedCardsId[1]
+  if (pickedCards[0] === pickedChosen[1]) {
+    alert('You found a match')
+    cards[optionOneId].setAttribute('src', 'assets/images/blank100.png')
+    cards[chosenTwoId].setAttribute('src', 'assets/images/blank100.png')
+  }
+}
+/*
+ * turns the cards around
+*/
   function flipCard(){
     var cardName = this.getAttribute('data-id')
     pickedCards.push(gameArray[cardName].name)
     pickedCardsId.push(cardName)
-    this.setAttribute('src', cardArray[cardName].img)
+    this.setAttribute('src', gameArray[cardName].img)
     if (pickedCards.length === 2) {
       setTimeout(checkForPair, 500)
     }
