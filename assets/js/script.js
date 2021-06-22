@@ -77,16 +77,38 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 
   const grid = document.querySelector('.grid')
+  var pickedCards = []
+  var pickedCardsId = []
+
 
   // Making the game board
-  function makeBoard(){
+  function makeBoard() {
     for (let i = 0; i < gameArray.length; i++) {
-      let tile = document.createElement('img')
-      Clipboard.setAttribute('src', 'assets/images/blank100.png')
-      Clipboard.setAttribute('data-id', i)
+      var tile = document.createElement('img')
+      tile.setAttribute('src', 'assets/images/blank100.png')
+      tile.setAttribute('data-id', i)
+      tile.addEventListener('click', flipcard)
       grid.appendChild(tile)
     }
   }
+  
+// turns the cards around
+  function flipCard(){
+    var cardName = this.getAttribute('data-id')
+    pickedCards.push(gameArray[cardName].name)
+    pickedCardsId.push(cardName)
+    this.setAttribute('src', cardArray[cardName].img)
+    if (pickedCards.length === 2) {
+      setTimeout(checkForPair, 500)
+    }
+
+  }
 
   makeBoard()
+
+
+
+
+
+
 })
