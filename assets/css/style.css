@@ -86,4 +86,13 @@ header {
     color: #3d2218;
 }
 
+/* Game Styling */
+
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 400px;
+  }
 
