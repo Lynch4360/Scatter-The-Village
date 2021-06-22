@@ -79,7 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid')
   var pickedCards = []
   var pickedCardsId = []
-
+  var cardsPaired = []
+  const displayResult = document.querySelector('#result')
 
   /*
   * Making the game board
@@ -102,9 +103,9 @@ function checkForMatch() {
   const optionOneId =  pickedCardsId[0]
   const optionTwoId =  pickedCardsId[1]
   if (pickedCards[0] === pickedChosen[1]) {
-    alert('You found a match')
+    alert('You returned our lost animals, Thank You')
     cards[optionOneId].setAttribute('src', 'assets/images/blank100.png')
-    cards[chosenTwoId].setAttribute('src', 'assets/images/blank100.png')
+    cards[optionTwoId].setAttribute('src', 'assets/images/blank100.png')
   }
 }
 /*
@@ -117,8 +118,15 @@ function checkForMatch() {
     this.setAttribute('src', gameArray[cardName].img)
     if (pickedCards.length === 2) {
       setTimeout(checkForPair, 500)
+      cardsPaired.push(cardsPicked)
+    } else {
+      cards[optionOneId].setAttribute('src', 'assets/images/blank100.png')
+      cards[optionTwoId].setAttribute('src', 'assets/images/blank100.png')
+      alert('Keep searching, we need your help')
     }
-
+    pickedCards = []
+    pickedCardsId = []
+    displayResult
   }
 
   makeBoard()
