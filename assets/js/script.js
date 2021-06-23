@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       name: 'goat',
-      img: 'assets/images/goat100.png'
+      img: 'assets/images/goatzoomed100.png'
     },
     {
       name: 'goat',
-      img: 'assets/images/goat100.png'
+      img: 'assets/images/goatzoomed100.png'
     },
     {
       name: 'rooster',
@@ -66,20 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'pig',
       img: 'assets/images/pig100.png'
-    },
-    {
-      name: 'rabbit',
-      img: 'assets/images/rabbit100.png'
-    },
-    {
-      name: 'rabbit',
-      img: 'assets/images/rabbit100.png'
     }
+    
   ]
   //Randomises Cards at start of game
   gameArray.sort(() => 0.5 - Math.random())
 
-  const game = document.querySelector('#game')
+  const game = document.querySelector('.game-container')
   var pickedCards = []
   var pickedCardsId = []
   var cardsPaired = []

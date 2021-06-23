@@ -90,12 +90,13 @@ header {
 
 
 
-#game {
-    text-align: center;
-    margin: auto;
-    width: 840px;
-    height: 650px;
-    padding-top: 300px;
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
+    padding-top: 10px;
 }
 
 .game-card{
@@ -103,6 +104,20 @@ header {
     height: 120px;
     margin: 5px;
     cursor: pointer;
+}
+
+.page-title {
+    font-weight: normal;
+    text-align: center;
+}
+
+.game-info {
+    font-size: 2em;
+}
+.game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
 }
 
 
