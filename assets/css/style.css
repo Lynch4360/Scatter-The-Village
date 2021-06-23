@@ -119,5 +119,37 @@ header {
     display: flex;
     justify-content: space-between;
 }
+/* overlay styling */
+.overlay-text {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: #EBB884;
+    font-family:  'DotGothic16', sans-serif;
+}
+
+.overlay-text.visible {
+    display: flex;
+    animation: overlay-grow 500ms forwards;
+}
+
+/* overlay animation */
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0, 0, 0, .8);
+        font-size: 4em;
+    }
+}
 
 
