@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+  
+  
   // card option
   const gameArray = [
     {
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img: 'assets/images/rabbit100.png'
     }
   ]
+  gameArray.sort(() => - Math.random())
 
   const grid = document.querySelector('.grid')
   var pickedCards = []
@@ -96,16 +98,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 /*
-* checks for pairs
+* checks for matches
 */
 function checkForMatch() {
   var cards = document.querySelectorAll('img')
   const optionOneId =  pickedCardsId[0]
   const optionTwoId =  pickedCardsId[1]
-  if (pickedCards[0] === pickedChosen[1]) {
+  if (pickedCards[0] === pickedCards[1]) {
     alert('You returned our lost animals, Thank You')
     cards[optionOneId].setAttribute('src', 'assets/images/blank100.png')
     cards[optionTwoId].setAttribute('src', 'assets/images/blank100.png')
+    cardsPaired.push(pickedCards)
+  } else {
+    cards[optionOneId].setAttribute('src', 'assets/images/blank100.png')
+    cards[optionTwoId].setAttribute('src', 'assets/images/blank100.png')
+    alert('Sorry, try again')
+  }
+  pickedCards = []
+  pickedCardsId = []
+  displayResult.textContent = cardsPaired.length
+  if (cardsPaired.length === gameArray.length/2) {
+    displayResult.textContent = 'Thank You! You found all of our animals'
   }
 }
 /*
@@ -117,16 +130,9 @@ function checkForMatch() {
     pickedCardsId.push(cardName)
     this.setAttribute('src', gameArray[cardName].img)
     if (pickedCards.length === 2) {
-      setTimeout(checkForPair, 500)
+      setTimeout(checkForMatch, 500)
       cardsPaired.push(cardsPicked)
-    } else {
-      cards[optionOneId].setAttribute('src', 'assets/images/blank100.png')
-      cards[optionTwoId].setAttribute('src', 'assets/images/blank100.png')
-      alert('Keep searching, we need your help')
     }
-    pickedCards = []
-    pickedCardsId = []
-    displayResult
   }
 
   makeBoard()
