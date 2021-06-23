@@ -17,7 +17,7 @@ p {
 }
 
 /* border styling */
-img {
+.imgBorder {
     border: 9px solid #3d2218;
 }
 
@@ -89,10 +89,20 @@ header {
 /* Game Styling */
 
 
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    height: 400px;
-    width: 300px;
-  }
+
+#game {
+    text-align: center;
+    margin: auto;
+    width: 840px;
+    height: 650px;
+    padding-top: 300px;
+}
+
+.game-card{
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+    cursor: pointer;
+}
+
 

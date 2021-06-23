@@ -76,9 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
       img: 'assets/images/rabbit100.png'
     }
   ]
+  //Randomises Cards at start of game
   gameArray.sort(() => 0.5 - Math.random())
 
-  const grid = document.querySelector('.grid')
+  const game = document.querySelector('#game')
   var pickedCards = []
   var pickedCardsId = []
   var cardsPaired = []
@@ -91,11 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < gameArray.length; i++) {
       var tile = document.createElement('img')
       tile.setAttribute('src', 'assets/images/blank100.png')
+      tile.setAttribute("class", "game-card")
       tile.setAttribute('data-id', i)
       tile.addEventListener('click', flipCard)
-      grid.appendChild(tile)
+      game.appendChild(tile)
     }
   }
+  
 
 /*
 * checks for matches
