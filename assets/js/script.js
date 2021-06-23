@@ -126,16 +126,11 @@ function checkForMatch() {
     pickedCardsId.push(cardName)
     this.setAttribute('src', gameArray[cardName].img)
     if (pickedCards.length === 2) {
-      setTimeout(checkForMatch, 500)
+      setTimeout(checkForMatch, 350)
       cardsPaired.push(cardsPicked)
     }
   }
 
   makeBoard()
-
-
-
-
-
 
 })
