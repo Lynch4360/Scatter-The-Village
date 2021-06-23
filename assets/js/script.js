@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img: 'assets/images/rabbit100.png'
     }
   ]
-  gameArray.sort(() => - Math.random())
+  gameArray.sort(() => 0.5 - Math.random())
 
   const grid = document.querySelector('.grid')
   var pickedCards = []
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
       var tile = document.createElement('img')
       tile.setAttribute('src', 'assets/images/blank100.png')
       tile.setAttribute('data-id', i)
-      tile.addEventListener('click', flipcard)
+      tile.addEventListener('click', flipCard)
       grid.appendChild(tile)
     }
   }
@@ -105,9 +105,9 @@ function checkForMatch() {
   const optionOneId =  pickedCardsId[0]
   const optionTwoId =  pickedCardsId[1]
   if (pickedCards[0] === pickedCards[1]) {
-    alert('You returned our lost animals, Thank You')
-    cards[optionOneId].setAttribute('src', 'assets/images/blank100.png')
-    cards[optionTwoId].setAttribute('src', 'assets/images/blank100.png')
+    alert('You found a match and returned our animals safely, Thank You!')
+    cards[optionOneId].setAttribute('src', 'assets/images/empty100.png')
+    cards[optionTwoId].setAttribute('src', 'assets/images/empty100.png')
     cardsPaired.push(pickedCards)
   } else {
     cards[optionOneId].setAttribute('src', 'assets/images/blank100.png')
