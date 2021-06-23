@@ -134,9 +134,13 @@ header {
     color: #EBB884;
     font-family:  'DotGothic16', sans-serif;
 }
+.overlay-text-small {
+    font-size: .3em
+}
 
 .overlay-text.visible {
     display: flex;
+    flex-direction: column;
     animation: overlay-grow 500ms forwards;
 }
 
@@ -148,8 +152,18 @@ header {
     }
     to {
         background-color: rgba(0, 0, 0, .8);
-        font-size: 4em;
+        font-size: 3em;
     }
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(2, auto);    }
+}
+
+.game-info-container {
+    flex-direction: column;
+    align-items: center;
 }
 
 
