@@ -9,7 +9,8 @@ body {
     background-color: #EBB884;
     font-family: 'DotGothic16', sans-serif;
     color: #3D2218;
-    font-weight: 900;
+    font-weight: 1000;
+    font-size: 1.25em;
 }
 
 p {
@@ -33,18 +34,13 @@ p {
     padding: 0px 30px 30px 30px;
 }
 
-.border2 {
-    border: 10px solid #3D2218;
-    margin: 1px;
-    padding: 30px;
-}
 
 
 /* footer styling */
 
 footer {
-    height: 70px;
-    padding: 10px 0px 30px 0px;
+    height: 90px;
+    padding: 10px 0px 0px 0px;
     clear: both;
     position: fixed;
     background-color: #2B3B2D;
@@ -54,8 +50,8 @@ footer {
     bottom: 0;
 }
 
-ol ul {
-    padding: 0;
+ol, ul {
+    padding-left: 0;
 }
 
 /* nav styling */
@@ -64,6 +60,7 @@ header {
     background-color: #2B3B2D;
     width: 100%;
     color: #E0FBFC;
+    font-size: 1.4em;
 }
 
 .navbar-light .navbar-brand {
@@ -71,43 +68,40 @@ header {
 }
 
 .social {
+    justify-content: center;
     text-align: center;
-    padding-bottom: 70px;
+    
 }
 
 .social li {
     display: inline;
-
 }
 
 .social i {
-    font-size: 1.6em;
+    font-size: 1.1em;
     margin: 1%;
     color: #E0FBFC;
 }
 
 /* Game Styling */
 
-
-
 .game-container {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(6, auto);
     grid-gap: 10px;
-    margin: 50px;
+    margin: 30px;
     justify-content: center;
-    padding-top: 10px;
 }
 
 .game-card {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     margin: 5px;
     cursor: pointer;
 }
 
 .page-title {
-    font-weight: normal;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -131,6 +125,7 @@ header {
     bottom: 0;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
     z-index: 100;
     color: #EBB884;
@@ -159,14 +154,24 @@ header {
         font-size: 3em;
     }
 }
+@media (max-width: 830px) {
+    .game-container {
+        grid-template-columns: repeat(3, auto)
+    }
+    .game-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .game-container {
         grid-template-columns: repeat(2, auto);
     }
-}
-
-.game-info-container {
-    flex-direction: column;
-    align-items: center;
+    .game-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
 }
