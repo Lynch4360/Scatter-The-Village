@@ -42,8 +42,6 @@ p {
     padding: 0px 30px 30px 30px;
 }
 
-
-
 /* footer styling */
 
 footer {
@@ -67,7 +65,7 @@ header {
     background-color: #2B3B2D;
     width: 100%;
     color: #E0FBFC;
-    font-size: 1.4em;
+    font-size: 1.15em;
 }
 
 .navbar-light .navbar-brand {
@@ -90,6 +88,9 @@ header {
     color: #E0FBFC;
 }
 
+.logo {
+    font-size: 1.25em;
+}
 /* Game Styling */
 
 .game-container {
