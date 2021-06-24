@@ -79,16 +79,14 @@ document.addEventListener("DOMContentLoaded", () => {
   //Randomises Cards at start of game
   gameArray.sort(() => 0.5 - Math.random());
 
-  const game = document.querySelector(".game-container");
-
   let playerScore = 0;
   let flipCount = 0;
+  let pickedCards = []
+  let cardsPaired = 0;
 
   const unclickedCard = "assets/images/blank100.png";
 
-  let pickedCards = []
-  let pickedCardsId = []
-  let cardsPaired = []
+  const game = document.querySelector(".game-container");
   const displayResult = document.querySelector("#result");
 
   // removing overlay on click
@@ -108,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < gameArray.length; i++) {
       var card = document.createElement("img");
       card.setAttribute("src", unclickedCard);
+      card.setAttribute("cardImage", gameArray[i].img)
       card.setAttribute("class", "game-card");
       card.setAttribute("cardAnimal", gameArray[i].name);
       updateEventListener(card, "add")
@@ -118,9 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update event listener
   function updateEventListener(card, action) {
     if (action === "add") {
-      card.addEventListener('click', flipCard);
+      card.addEventListener("click", flipCard);
     } else {
-      card.removeEventListener('click', flipCard);
+      card.removeEventListener("click", flipCard);
     }
   }
 
@@ -129,20 +128,17 @@ document.addEventListener("DOMContentLoaded", () => {
    * checks for matches
    */
   function checkForMatch() {
-    var cards = document.querySelectorAll("img");
-    const optionOneId = pickedCardsId[0];
-    const optionTwoId = pickedCardsId[1];
+    const card1 = pickedCards[0];
+    const card2 = pickedCards[1];
 
 
     if (pickedCards[0] === pickedCards[1] && pickedCardsId[0] !== pickedCardsId[1]) {
       cards[optionOneId].setAttribute("src", "assets/images/empty100.png");
       cards[optionTwoId].setAttribute("src", "assets/images/empty100.png");
       cardsPaired.push(pickedCards)
-      flipsCounter();
     } else {
       cards[optionOneId].setAttribute("src", "assets/images/blank100.png");
       cards[optionTwoId].setAttribute("src", "assets/images/blank100.png");
-      flipCounter();
     }
 
 
@@ -158,16 +154,24 @@ document.addEventListener("DOMContentLoaded", () => {
    * turns the cards around
    */
   function flipCard() {
-    var cardName = this.getAttribute("data-id");
-    pickedCards.push(gameArray[cardName].name);
-    pickedCardsId.push(cardName);
-    this.setAttribute("src", gameArray[cardName].img);
-    if (pickedCards.length === 2) {
-      setTimeout(checkForMatch, 200);
+    // pickedCards.push(gameArray[cardName].name);
+    // pickedCardsId.push(cardName);
+    // this.setAttribute("src", gameArray[cardName].img);
+    if (pickedCards.length === 0) {
+      updateEventListener(this, "remove")
+      checkForMatch(pickedCards)
       cardsPaired.push(pickedCards);
+    } else {
+
     }
   }
-
+ function updateImage(card) {
+  if (card.getAttribute("src") === card.getAttribute("cardImage")) {
+    card.setAttribute("src") = unclickedCard
+  } else {
+    card.setAttribute("src") = card.getAttribute("cardImage")
+  }
+ }
   makeBoard()
 
 })
