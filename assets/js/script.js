@@ -84,6 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let pickedCards = []
   let cardsPaired = 0;
 
+
+  const matchedCard = "assets/images/empty100.png";
   const unclickedCard = "assets/images/blank100.png";
 
   const game = document.querySelector(".game-container");
@@ -130,23 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkForMatch() {
     const card1 = pickedCards[0];
     const card2 = pickedCards[1];
-
-
-    if (pickedCards[0] === pickedCards[1] && pickedCardsId[0] !== pickedCardsId[1]) {
-      cards[optionOneId].setAttribute("src", "assets/images/empty100.png");
-      cards[optionTwoId].setAttribute("src", "assets/images/empty100.png");
-      cardsPaired.push(pickedCards)
-    } else {
-      cards[optionOneId].setAttribute("src", "assets/images/blank100.png");
-      cards[optionTwoId].setAttribute("src", "assets/images/blank100.png");
-    }
-
-
-    pickedCards = []
-    pickedCardsId = []
-    displayResult.textContent = cardsPaired.length
-    if (cardsPaired.length === gameArray.length / 2) {
-
+    if (card1.getAttribute("cardAnimal") === card.getAttribute("cardAnimal")){
+      playerScore = playerScore + 50
+      for (card of pickedCards) {
+        updateImage(card, "matched")
+      }
     }
   }
 
@@ -154,24 +144,27 @@ document.addEventListener("DOMContentLoaded", () => {
    * turns the cards around
    */
   function flipCard() {
-    // pickedCards.push(gameArray[cardName].name);
-    // pickedCardsId.push(cardName);
-    // this.setAttribute("src", gameArray[cardName].img);
     if (pickedCards.length === 0) {
       updateEventListener(this, "remove")
-      checkForMatch(pickedCards)
-      cardsPaired.push(pickedCards);
+      updateImage(this, "flip")
+      pickedCards.push(this)
     } else {
-
+      updateEventListener(this, "remove")
+      updateImage(this, "flip")
+      pickedCards.push(this)
+      checkForMatch()
     }
   }
- function updateImage(card) {
-  if (card.getAttribute("src") === card.getAttribute("cardImage")) {
-    card.setAttribute("src") = unclickedCard
-  } else {
-    card.setAttribute("src") = card.getAttribute("cardImage")
+
+  function updateImage(card, flag) {
+    if (flag === "matched") {
+      card.setAttribute("src") = matchedCard
+    } else if (flag === "flip"){
+      card.setAttribute("src") = card.getAttribute("cardImage")
+    } else {
+      card.setAttribute("src") = unclickedCard
+    }
   }
- }
   makeBoard()
 
 })
