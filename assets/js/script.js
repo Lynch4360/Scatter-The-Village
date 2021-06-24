@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "assets/images/dog1.png"
     },
     {
-      name: "dog1.png",
+      name: "dog1",
       img: "assets/images/dog1.png"
     },
     {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       name: "dog3",
-      img: "assets/images/dog1.png"
+      img: "assets/images/dog3.png"
     },
     {
       name: "dog3",
@@ -89,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const unclickedCard = "assets/images/blank100.png";
 
   const game = document.querySelector(".game-container");
-  const displayResult = document.querySelector("#result");
 
   // removing overlay on click
   let overlays = Array.from(document.getElementsByClassName("overlay-text"));
@@ -106,11 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   function makeBoard() {
     for (let i = 0; i < gameArray.length; i++) {
-      var card = document.createElement("img");
-      card.setAttribute("src", unclickedCard);
+      var card = document.createElement("img")
+      card.setAttribute("src", unclickedCard)
       card.setAttribute("cardImage", gameArray[i].img)
-      card.setAttribute("class", "game-card");
-      card.setAttribute("cardAnimal", gameArray[i].name);
+      card.setAttribute("class", "game-card")
+      card.setAttribute("cardAnimal", gameArray[i].name)
       updateEventListener(card, "add")
       game.appendChild(card);
     }
@@ -132,28 +131,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const card1 = pickedCards[0];
     const card2 = pickedCards[1];
     if (card1.getAttribute("cardAnimal") === card2.getAttribute("cardAnimal")){
-      playerScore = playerScore + 50
+      updatePlayerScoreSpan(50)
       cardsPaired++
       for (card of pickedCards) {
         updateImage(card, "matched")
       }
-      pickedCards = []
       if (cardsPaired === 9) {
         alert("winner winner chicken dinner")
       }
     } else {
-      playerScore = playerScore - 10
+      updatePlayerScoreSpan(-10)
       for (card of pickedCards) {
         updateImage(card, "failedMatch")
         updateEventListener(card, "add")
       }
     }
+    pickedCards = []
   }
   /*
    * turns the cards around
    */
   function flipCard() {
-    flipCount++
+    updatePlayerFlipSpan(1)
     updateEventListener(this, "remove")
     updateImage(this, "flip")
     pickedCards.push(this)
@@ -162,13 +161,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function updatePlayerScoreSpan(scoreModification) {
+    playerScore = playerScore + scoreModification
+
+    let scoreElement = document.getElementById("gameScore");
+    scoreElement.innerText = "Score: " + playerScore;
+}
+
+function updatePlayerFlipSpan(flipModification) {
+  flipCount = flipCount + flipModification
+
+  let flipElement = document.getElementById("gameFlips");
+  flipElement.innerText = "Flips: " + flipCount;
+}
+
   function updateImage(card, flag) {
     if (flag === "matched") {
-      card.setAttribute("src") = matchedCard
+      card.setAttribute("src", matchedCard)
     } else if (flag === "flip"){
-      card.setAttribute("src") = card.getAttribute("cardImage")
+      card.setAttribute("src", card.getAttribute("cardImage"))
     } else {
-      card.setAttribute("src") = unclickedCard
+      setTimeout(() => {
+        card.setAttribute("src", unclickedCard)
+      }, 500)
+      
     }
   }
   makeBoard()
