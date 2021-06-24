@@ -125,17 +125,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-
   /*
    * checks for matches
    */
   function checkForMatch() {
     const card1 = pickedCards[0];
     const card2 = pickedCards[1];
-    if (card1.getAttribute("cardAnimal") === card.getAttribute("cardAnimal")){
+    if (card1.getAttribute("cardAnimal") === card2.getAttribute("cardAnimal")){
       playerScore = playerScore + 50
+      cardsPaired++
       for (card of pickedCards) {
         updateImage(card, "matched")
+      }
+      pickedCards = []
+    } else {
+      playerScore = playerScore - 10
+      for (card of pickedCards) {
+        updateImage(card, "failedMatch")
+        updateEventListener(card, "add")
       }
     }
   }
@@ -144,14 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
    * turns the cards around
    */
   function flipCard() {
-    if (pickedCards.length === 0) {
-      updateEventListener(this, "remove")
-      updateImage(this, "flip")
-      pickedCards.push(this)
-    } else {
-      updateEventListener(this, "remove")
-      updateImage(this, "flip")
-      pickedCards.push(this)
+    flipCount++
+    updateEventListener(this, "remove")
+    updateImage(this, "flip")
+    pickedCards.push(this)
+    if (pickedCards.length === 2) {
       checkForMatch()
     }
   }
