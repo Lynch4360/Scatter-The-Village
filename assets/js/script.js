@@ -138,6 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
         updateImage(card, "matched")
       }
       pickedCards = []
+      if (cardsPaired === 9) {
+        alert("winner winner chicken dinner")
+      }
     } else {
       playerScore = playerScore - 10
       for (card of pickedCards) {
@@ -146,7 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-
   /*
    * turns the cards around
    */
