@@ -1,5 +1,7 @@
 /* Global Styling */
-
+html {
+    height: 100%;
+}
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +9,15 @@
 
 body {
     background-color: #EBB884;
-    font-family: 'DotGothic16', sans-serif;
+    font-family: "DotGothic16", sans-serif;
     color: #3D2218;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height : 100%;
+
+
     font-weight: 1000;
     font-size: 1.25em;
 }
@@ -30,7 +39,6 @@ p {
 
 .border1 {
     border: 10px solid #3D2218;
-    margin: 1px;
     padding: 0px 30px 30px 30px;
 }
 
@@ -42,12 +50,11 @@ footer {
     height: 90px;
     padding: 10px 0px 0px 0px;
     clear: both;
-    position: fixed;
     background-color: #2B3B2D;
     color: #E0FBFC;
     width: 100%;
-    left: 0;
-    bottom: 0;
+    margin-bottom: 0;
+    margin-top: auto;
 }
 
 ol, ul {
@@ -129,7 +136,7 @@ header {
     align-items: center;
     z-index: 100;
     color: #EBB884;
-    font-family: 'DotGothic16', sans-serif;
+    font-family: "DotGothic16", sans-serif;
 }
 
 .overlay-text-small {
