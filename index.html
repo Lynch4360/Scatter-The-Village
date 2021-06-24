@@ -36,96 +36,54 @@
             <div class="collapse navbar-collapse" id="toggleMobileMenu">
                 <ul class="navbar-nav text-center ms-auto">
                     <li>
-                        <a class="nav-link active white-border" href="index.html">Home</a>
+                        <a class="nav-link active white-border" href="index.html">Play</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="play.html">Play</a>
+                        <a class="nav-link href" href="instructions.html">Instructions</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="#">Leaderboard</a>
-
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
-
-
         </nav>
+
     </header>
-    <!-- motive of game -->
-    <div class="border1" id="containerBorder d-flex flex-column flex-grow">
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 py-sm-5 p7-md-5 pt-lg-5">
-                        <h3><strong>HELP</strong></h3>
-                        <h4>
-                            <p></p>The Village has been scattered and the animals have lost their friends, will you
-                            help to match them back up?</p>
-                        </h4>
-                    </div>
-                    <br>
-                    <!-- Play Now Button-->
-                    <div class="col-lg-6 col-md-12 col-sm-12 pt-sm-5 pt-md-5 p-lg-4 pb-4 text-center">
-                        <a href="play.html"><img src="assets/images/home/playNow.jpg"
-                                alt="wooden minecraft style sign for the Play Now button" class="imgBorder"></a>
-                    </div>
+
+    <section class="memory-game">
+        <h1 class="page-title">Help pair our lost Animals</h1>
+        <!-- overlays -->
+        <div class="overlay-text visible">
+            Click to start
+        </div>
+        <div id="game-over-text" class="overlay-text">
+            GAME OVER
+            <span class="overlay-text-small">Click to restart</span>
+        </div>
+        <div id="victory-text" class="overlay-text">
+            VICTORY
+            <span class="overlay-text-small">Click to restart</span>
+        </div>
+        <!-- game container -->
+        <div class="game-container">
+            <div class="game-info-container">
+                <div class="game-info">
+                    Time <span id="time-remaining">100</span>
                 </div>
-                <!-- Game Instructions and image of village -->
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 pt-lg-1">
-                        <h3 class="pt-5"><strong>Game Instructions</h3></strong>
-                        <p>The objective of the game is simple, successfully match up all of the animals.
-
-                            Start the game by flipping a card, then try to find another card that has the same image as
-                            the first.
-
-                            If the card you flip does not match the first one, the flipped cards will be turned face
-                            down again.
-
-                            When you find a pair the cards are removed from the board. Once all cards have been cleared
-                            you have won the game. Once you clear the board you
-
-                            will be given a score based on your speed and accuracy.
-                            <br><br>
-                            <h5>So quickly find the scattered animals. You are the hero this village needs!</h5>
-                        </p>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 pt-5">
-                        <img src="assets/images/home/village.png" class="img-fluid imgBorder"
-                            alt="Image of small pixel art village">
-                    </div>
+                <div class="game-info">
+                    Flips <span id="flips">0</span>
                 </div>
-                <!-- Interesting facts-->
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 col-lg-4 pt-sm-1 p-md-2 pt-lg-4 ps-lg-2">
-                        <h3 class="pt-3"><strong>Interesting Fact</strong></h3>
-                        <br>
-                        <p>This memery game is known as many things, Concentration, also known as Memory, Pelmanism,
-                            Pexeso or simply Pairs</p>
-                    </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4 pt-sm-1 p-md-2 pt-lg-4 p-lg-2">
-                        <h3 class="pt-3"><strong>Interesting Fact</strong></h3>
-                        <br>
-                        <p>Mark Twain actually built a memory game at
-                            <br>
-                            one point check it out <a href="http://www.twainquotes.com/MemoryGame.html" target="_blank"
-                                rel="noopener" aria-label="Link to MArk Twain's memory game documentation">Here</a></p>
-                    </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4  pt-sm-1 p-md-2 pt-lg-4 p-lg-2">
-                        <h3 class="pt-3"><strong>Interesting Fact</strong></h3>
-                        <br>
-                        <p>In Japanese a version of this game 'Shinkei suijaku' means 'Nervous Breakdown'</p>
-                    </div>
-                </div>
-        </section>
-    </div>
-    </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- footer section-->
     <footer class="border1" id="containerBorder d-flex flex-column flex-grow py-3 py-md-2 py-sm-0">
         <!-- social media links-->
-        <ul class="social text-center px-2 pb-3">
+        <ul class="social text-center px-3 pb-3">
             <li class="text-center">
-                <i class="far fa-copyright"></i>Daniel Lynch 2021</li>
+                <i class="far fa-copyright"></i> Daniel Lynch 2021</li>
             <li>
                 <a href="https://github.com/Lynch4360" target="_blank" rel="noopener"
                     aria-label="Visit my GitHub page (opens in a new tab)"><i class="fab fa-github"></i></a>
