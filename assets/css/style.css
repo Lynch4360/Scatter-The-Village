@@ -8,7 +8,7 @@
 body {
     background-color: #EBB884;
     font-family: 'DotGothic16', sans-serif;
-    color: #3d2218;
+    color: #3D2218;
     font-weight: 900;
 }
 
@@ -18,23 +18,23 @@ p {
 
 /* border styling */
 .imgBorder {
-    border: 9px solid #3d2218;
+    border: 9px solid #3D2218;
 }
 
 #containerBorder {
-    border: 10px solid #3d2218;
+    border: 10px solid #3D2218;
     margin: 0;
     padding: 0;
 }
 
 .border1 {
-    border: 10px solid #3d2218;
+    border: 10px solid #3D2218;
     margin: 1px;
     padding: 0px 30px 30px 30px;
 }
 
 .border2 {
-    border: 10px solid #3d2218;
+    border: 10px solid #3D2218;
     margin: 1px;
     padding: 30px;
 }
@@ -81,9 +81,9 @@ header {
 }
 
 .social i {
-    font-size: 160%;
+    font-size: 1.6em;
     margin: 1%;
-    color: #3d2218;
+    color: #3D2218;
 }
 
 /* Game Styling */
@@ -99,7 +99,7 @@ header {
     padding-top: 10px;
 }
 
-.game-card{
+.game-card {
     width: 120px;
     height: 120px;
     margin: 5px;
@@ -114,11 +114,13 @@ header {
 .game-info {
     font-size: 2em;
 }
+
 .game-info-container {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
 }
+
 /* overlay styling */
 .overlay-text {
     display: none;
@@ -132,8 +134,9 @@ header {
     align-items: center;
     z-index: 100;
     color: #EBB884;
-    font-family:  'DotGothic16', sans-serif;
+    font-family: 'DotGothic16', sans-serif;
 }
+
 .overlay-text-small {
     font-size: .3em
 }
@@ -150,6 +153,7 @@ header {
         background-color: rgba(0, 0, 0, 0);
         font-size: 0;
     }
+
     to {
         background-color: rgba(0, 0, 0, .8);
         font-size: 3em;
@@ -158,12 +162,11 @@ header {
 
 @media (max-width: 600px) {
     .game-container {
-        grid-template-columns: repeat(2, auto);    }
+        grid-template-columns: repeat(2, auto);
+    }
 }
 
 .game-info-container {
     flex-direction: column;
     align-items: center;
 }
-
-
