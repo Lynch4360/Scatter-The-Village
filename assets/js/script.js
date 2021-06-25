@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ]
   //Randomises Cards at start of game
-  gameArray.sort(() => 0.5 - Math.random());
+  // gameArray.sort(() => 0.5 - Math.random());
 
   let playerScore = 0;
   let flipCount = 0;
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateImage(card, "matched")
       }
       if (cardsPaired === 9) {
-        alert("winner winner chicken dinner")
+         $("#\\victoryModal").modal("show")
       }
     } else {
       updatePlayerScoreSpan(-10)
@@ -190,3 +190,8 @@ function updatePlayerFlipSpan(flipModification) {
   makeBoard()
 
 })
+
+
+
+
+
