@@ -138,10 +138,11 @@ function resetEverything() {
   playerScore = 0
   gameFlips = 0
   pickedCards = []
-  listCardDiv = game.getElementsByTagName('img')
-  for (card in listCardDiv) {
-    updateImage(card, "failedMatch")
-    updateEventListener(card, "add")
+  listCardDiv = document.querySelectorAll(".game-card")
+  for (let i=0; i < listCardDiv.length; i++) {
+    console.log(listCardDiv[i])
+    updateImage(listCardDiv[i], "failedMatch")
+    updateEventListener(listCardDiv[i], "add")
   }
   gameArray.sort(() => 0.5 - Math.random());
   

@@ -152,13 +152,14 @@ header {
 
 #resetBtn {
     margin: 0 auto;
-    border: 2px solid #E0FBFC;
+    border: 5px solid #E0FBFC;
     border-radius: 1px;
     padding: 15px 32px 15px 32px;
     margin-bottom: 2em;
     text-align: center;
-    font-size: medium;
+    font-size: large;
     background-color: #3D2218;
+    color: #E0FBFC;
     display: block;
     cursor: pointer;
 }
