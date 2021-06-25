@@ -150,6 +150,25 @@ header {
     animation: overlay-grow 500ms forwards;
 }
 
+#resetBtn {
+    margin: 0 auto;
+    border: 2px solid #E0FBFC;
+    border-radius: 1px;
+    padding: 15px 32px 15px 32px;
+    margin-bottom: 2em;
+    text-align: center;
+    font-size: medium;
+    background-color: #3D2218;
+    display: block;
+    cursor: pointer;
+}
+
+#resetBtn:hover {
+    background-color: #3D2218;
+    color: #E0FBFC;
+    transform: scale(1.10);
+}
+
 /* overlay animation */
 @keyframes overlay-grow {
     from {
