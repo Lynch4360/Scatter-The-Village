@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
  
   gameArray = []
+
   for (animal of animals) {
     let cardInfo = {
       name: animal,
@@ -26,7 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Randomises Cards at start of game
-  // gameArray.sort(() => 0.5 - Math.random());
+  gameArray.sort(() => 0.5 - Math.random());
+
+  let listCardDiv = []
 
   let playerScore = 0;
   let flipCount = 0;
@@ -36,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const matchedCard = "assets/images/empty100.png";
   const unclickedCard = "assets/images/blank100.png";
-
+  const reset = document.getElementById("resetBtn");
   const game = document.querySelector(".game-container");
 
   // removing overlay on click
@@ -60,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.setAttribute("class", "game-card")
       card.setAttribute("cardAnimal", gameArray[i].name)
       updateEventListener(card, "add")
-      game.appendChild(card);
+      game.appendChild(card)
     }
   }
 
@@ -113,8 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function updatePlayerScoreSpan(scoreModification) {
     playerScore = playerScore + scoreModification
 
-    let scoreElement = document.getElementById("gameScore");
+    let scoreElement = document.getElementById("gameScore1");
     scoreElement.innerText = "Score: " + playerScore;
+    
 }
 
 function updatePlayerFlipSpan(flipModification) {
@@ -122,6 +126,25 @@ function updatePlayerFlipSpan(flipModification) {
 
   let flipElement = document.getElementById("gameFlips");
   flipElement.innerText = "Flips: " + flipCount;
+}
+
+
+reset.addEventListener("click", resetEverything);
+function resetEverything() {
+  updatePlayerFlipSpan(flipCount * -1)
+  updatePlayerScoreSpan(playerScore * -1)
+
+  cardsPaired = 0
+  playerScore = 0
+  gameFlips = 0
+  pickedCards = []
+  listCardDiv = game.getElementsByTagName('img')
+  for (card in listCardDiv) {
+    updateImage(card, "failedMatch")
+    updateEventListener(card, "add")
+  }
+  gameArray.sort(() => 0.5 - Math.random());
+  
 }
 
   function updateImage(card, flag) {
