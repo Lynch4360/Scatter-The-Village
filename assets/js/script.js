@@ -1,4 +1,4 @@
-// loads everything inside of {} once the DOM has fully loaded
+// This will run everything inside of {} once the DOM has fully loaded
 document.addEventListener("DOMContentLoaded", () => {
 
   const animals = [
