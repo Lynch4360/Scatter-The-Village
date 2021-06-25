@@ -1,7 +1,6 @@
 // loads everything inside of {} once the DOM has fully loaded
 document.addEventListener("DOMContentLoaded", () => {
 
-
   const animals = [
       "cow",
       "pig",
@@ -35,13 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let pickedCards = [];
   let cardsPaired = 0;
 
-
   const matchedCard = "assets/images/empty100.png";
   const unclickedCard = "assets/images/blank100.png";
   const reset = document.getElementById("resetBtn");
   const game = document.querySelector(".game-container");
 
-  // removing overlay on click
+  // This removes the overlay with small amount of instructions and some flavour text when it is clicked
   let overlays = Array.from(document.getElementsByClassName("overlay-text"));
 
   overlays.forEach(overlay => {
@@ -52,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /*
-   * Making the game board
+   * This funciton creates the game 
    */
   function makeBoard() {
       for (let i = 0; i < gameArray.length; i++) {
@@ -103,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
       pickedCards = [];
   }
   /*
-   * Flips the cards
+   * Flips the cards and has an if statement that calls the checkForMatch function when the total numbe rof selected cards is equal to 2
    */
   function flipCard() {
       updatePlayerFlipSpan(1);
@@ -115,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   }
   /*
-   * Updates the players score as they flip carrds
+   * Updates the player's score as they flip carrds
    */
   function updatePlayerScoreSpan(scoreModification) {
       playerScore = playerScore + scoreModification;
@@ -125,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
   /*
-   * Updates the plers flip counter as they flip carrds
+   * Updates the player's flip counter as they flip over the cards
    */
   function updatePlayerFlipSpan(flipModification) {
       flipCount = flipCount + flipModification;
@@ -135,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /*
-   * Resets game
+   * This resets the game when the reset button is clicked
    */
   reset.addEventListener("click", resetEverything);
 
@@ -153,10 +151,9 @@ document.addEventListener("DOMContentLoaded", () => {
           gameArray.sort(() => 0.5 - Math.random());
       }
       
-
   }
   /*
-   * Updates images on card
+   * This updates the image on the card and has a timer set to check to see * if the first and second selected image match
    */
   function updateImage(card, flag) {
       if (flag === "matched") {
@@ -174,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   }
   /*
-   * calling the make board function
+   * This is calling the makeBoard function
    */
   makeBoard();
 
