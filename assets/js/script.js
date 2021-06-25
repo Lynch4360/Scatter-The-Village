@@ -6,9 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "cow",
       "pig",
       "chicken",
-      "dog1",
-      "dog2",
-      "dog3",
       "duck",
       "cat",
       "rabbit"
@@ -17,11 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
   gameArray = [];
   const pathToImages = "assets/images/";
 
-  for (var animal of animals) {
+  for (let animal of animals) {
       let cardInfo = {
           name: animal,
           img: pathToImages + animal + ".png"
       };
+      // We are doing this twice because there will be 2 copies of each card
       gameArray.push(cardInfo);
       gameArray.push(cardInfo);
   }
@@ -58,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   function makeBoard() {
       for (let i = 0; i < gameArray.length; i++) {
-          var card = document.createElement("img");
+          let card = document.createElement("img");
           card.setAttribute("src", unclickedCard);
           card.setAttribute("cardImage", gameArray[i].img);
           card.setAttribute("class", "game-card");
@@ -80,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /*
-   * checks for matches
+   * This will check for matches, then give 50 score to player if correct *  * match is found and if that match is not found the player will lose 10 *  points.
    */
   function checkForMatch() {
       const card1 = pickedCards[0];
@@ -150,11 +148,11 @@ document.addEventListener("DOMContentLoaded", () => {
       pickedCards = [];
       listCardDiv = document.querySelectorAll(".game-card");
       for (let i = 0; i < listCardDiv.length; i++) {
-          console.log(listCardDiv[i]);
           updateImage(listCardDiv[i], "failedMatch");
           updateEventListener(listCardDiv[i], "add");
+          gameArray.sort(() => 0.5 - Math.random());
       }
-      gameArray.sort(() => 0.5 - Math.random());
+      
 
   }
   /*

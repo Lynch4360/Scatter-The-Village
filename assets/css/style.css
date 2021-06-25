@@ -44,7 +44,7 @@ p {
 /* footer styling */
 
 footer {
-    height: 90px;
+    height: 100px;
     padding: 10px 0px 0px 0px;
     clear: both;
     background-color: #2B3B2D;
@@ -96,7 +96,7 @@ header {
 
 .game-container {
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
     margin: 30px;
     justify-content: center;
@@ -107,6 +107,9 @@ header {
     height: 110px;
     margin: 5px;
     cursor: pointer;
+}
+.game-instruction-title {
+    font-weight: bold;
 }
 
 .page-title {
@@ -198,12 +201,21 @@ header {
 
 @media (max-width: 500px) {
     .game-container {
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 0px;
+        margin: 6px;
     }
 
     .game-info-container {
         flex-direction: column;
         align-items: center;
     }
-
+    .game-card {
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+    }
+    .logo {
+        font-size: 1em;
+    }
 }

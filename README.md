@@ -35,10 +35,15 @@ My goal in the design was to create a site with a user friendly design while del
 ### Surface
 
 ## Technologies
-1. HTML
-2. CSS
-3. Javascript
-4. Bootstrap (5.0.1)
+[Javascript](https://en.wikipedia.org/wiki/JavaScript)
+
+[Bootstrap (5.0.1)](https://en.wikipedia.org/wiki/Bootstrap_%28front-end_framework%29)
+
+[HTML](https://en.wikipedia.org/wiki/HTML)
+
+[CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+
+[MARKDOWN](https://en.wikipedia.org/wiki/Markdown)
 
 ## Features
 
@@ -49,9 +54,30 @@ My goal in the design was to create a site with a user friendly design while del
 ## Testing
 
 ## Deployment
+# Deployment
+    The project was deployed to GitHub Pages using the following steps, I used Gitpod as a development environment where I commited all changes to git version control system. I used the push command in Gitpod to save changes into GitHub:
+
+    1. Log in to GitHub and locate the GitHub Repository.
+    2. At the top of the Repository, click on the "Settings" Button on the menu.
+    3. Scroll down the Settings page until you locate the "Pages" Section.
+    4. Under "Source", click the dropdown called "None" and select "Master Branch" and click on save.
+    5. The page will automatically refresh.
+    6. The now published site link shows at the top of the page.
+
+    The live site can be found [here]https://lynch4360.github.io/Scatter-The-Village/
+
+    To run locally:
+
+    1. Log in to GitHub and click on repository to download.
+    2. Select Code and click Download the ZIP file.
+    3. After download you can extract the file and use it in your local environment.
+    4. Alternatively you can Clone or Fork this repository into your github account.
 
 ## Credits
 
+    All CSS and HTML code was written by the developer.
+    The JavaScript code for the game was written by the developer, although inspiration was acquired from 
+    [Port.exe's Video] (https://www.youtube.com/watch?v=3uuQ3g92oPQ&t=1503s)
 ### Content
 
 ### Media
