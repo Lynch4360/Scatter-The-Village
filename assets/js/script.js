@@ -1,82 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 
-  // card option
-  const gameArray = [{
-      name: "cow",
-      img: "assets/images/cow.png"
-    },
-    {
-      name: "cow",
-      img: "assets/images/cow.png"
-    },
-    {
-      name: "pig",
-      img: "assets/images/pig.png"
-    },
-    {
-      name: "pig",
-      img: "assets/images/pig.png"
-    },
-    {
-      name: "chicken",
-      img: "assets/images/chicken.png"
-    },
-    {
-      name: "chicken",
-      img: "assets/images/chicken.png"
-    },
-    {
-      name: "dog1",
-      img: "assets/images/dog1.png"
-    },
-    {
-      name: "dog1",
-      img: "assets/images/dog1.png"
-    },
-    {
-      name: "dog2",
-      img: "assets/images/dog2.png"
-    },
-    {
-      name: "dog2",
-      img: "assets/images/dog2.png"
-    },
-    {
-      name: "dog3",
-      img: "assets/images/dog3.png"
-    },
-    {
-      name: "dog3",
-      img: "assets/images/dog3.png"
-    },
-    {
-      name: "duck",
-      img: "assets/images/duck.png"
-    },
-    {
-      name: "duck",
-      img: "assets/images/duck.png"
-    },
-    {
-      name: "cat",
-      img: "assets/images/cat.png"
-    },
-    {
-      name: "cat",
-      img: "assets/images/cat.png"
-    },
-    {
-      name: "rabbit",
-      img: "assets/images/rabbit.png"
-    },
-    {
-      name: "rabbit",
-      img: "assets/images/rabbit.png"
-    }
-
+  const animals = [
+    "cow",
+    "pig",
+    "chicken",
+    "dog1",
+    "dog2",
+    "dog3",
+    "duck",
+    "cat",
+    "rabbit"
   ]
-  //Randomises Cards at start of game
+  const pathToImages = "assets/images/"
+
+ 
+  gameArray = []
+  for (animal of animals) {
+    let cardInfo = {
+      name: animal,
+      img: pathToImages + animal + ".png"
+    }
+    gameArray.push(cardInfo)
+    gameArray.push(cardInfo)
+  }
+
+  // Randomises Cards at start of game
   // gameArray.sort(() => 0.5 - Math.random());
 
   let playerScore = 0;
@@ -177,13 +126,16 @@ function updatePlayerFlipSpan(flipModification) {
 
   function updateImage(card, flag) {
     if (flag === "matched") {
-      card.setAttribute("src", matchedCard)
+      setTimeout(() => {
+        card.setAttribute("src", matchedCard)
+      }, 400)
+      
     } else if (flag === "flip"){
       card.setAttribute("src", card.getAttribute("cardImage"))
     } else {
       setTimeout(() => {
         card.setAttribute("src", unclickedCard)
-      }, 500)
+      }, 400)
       
     }
   }
