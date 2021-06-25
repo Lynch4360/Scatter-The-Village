@@ -1,3 +1,5 @@
+
+// loads everything inside of {} once the DOM has fully loaded
 document.addEventListener("DOMContentLoaded", () => {
 
 
@@ -12,9 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "cat",
     "rabbit"
   ]
-  const pathToImages = "assets/images/"
 
- 
   gameArray = []
 
   for (animal of animals) {
@@ -27,30 +27,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Randomises Cards at start of game
-  gameArray.sort(() => 0.5 - Math.random());
+  gameArray.sort(() => 0.5 - Math.random())
 
+  // Global Variables
   let listCardDiv = []
 
-  let playerScore = 0;
-  let flipCount = 0;
+  let playerScore = 0
+  let flipCount = 0
   let pickedCards = []
-  let cardsPaired = 0;
+  let cardsPaired = 0
 
 
-  const matchedCard = "assets/images/empty100.png";
-  const unclickedCard = "assets/images/blank100.png";
-  const reset = document.getElementById("resetBtn");
-  const game = document.querySelector(".game-container");
+  const matchedCard = "assets/images/empty100.png"
+  const unclickedCard = "assets/images/blank100.png"
+  const reset = document.getElementById("resetBtn")
+  const game = document.querySelector(".game-container")
 
   // removing overlay on click
-  let overlays = Array.from(document.getElementsByClassName("overlay-text"));
+  let overlays = Array.from(document.getElementsByClassName("overlay-text"))
 
   overlays.forEach(overlay => {
     overlay.addEventListener("click", () => {
-      overlay.classList.remove("visible");
+      overlay.classList.remove("visible")
 
-    });
-  });
+    })
+  })
 
   /*
    * Making the game board
@@ -67,12 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Update event listener
+  /*
+   * Update the Event listeners
+   */
   function updateEventListener(card, action) {
     if (action === "add") {
-      card.addEventListener("click", flipCard);
+      card.addEventListener("click", flipCard)
     } else {
-      card.removeEventListener("click", flipCard);
+      card.removeEventListener("click", flipCard)
     }
   }
 
@@ -80,14 +83,15 @@ document.addEventListener("DOMContentLoaded", () => {
    * checks for matches
    */
   function checkForMatch() {
-    const card1 = pickedCards[0];
-    const card2 = pickedCards[1];
+    const card1 = pickedCards[0]
+    const card2 = pickedCards[1]
     if (card1.getAttribute("cardAnimal") === card2.getAttribute("cardAnimal")){
       updatePlayerScoreSpan(50)
       cardsPaired++
       for (card of pickedCards) {
         updateImage(card, "matched")
       }
+      // Victory Modal for game when reaches 9 because there are 18 cards
       if (cardsPaired === 9) {
          $("#\\victoryModal").modal("show")
       }
@@ -101,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pickedCards = []
   }
   /*
-   * turns the cards around
+   * Flips the cards
    */
   function flipCard() {
     updatePlayerFlipSpan(1)
@@ -112,24 +116,30 @@ document.addEventListener("DOMContentLoaded", () => {
       checkForMatch()
     }
   }
-
+/*
+   * Updates the players score as they flip carrds
+   */
   function updatePlayerScoreSpan(scoreModification) {
     playerScore = playerScore + scoreModification
 
-    let scoreElement = document.getElementById("gameScore1");
-    scoreElement.innerText = "Score: " + playerScore;
+    let scoreElement = document.getElementById("gameScore1")
+    scoreElement.innerText = "Score: " + playerScore
     
 }
-
+/*
+   * Updates the plers flip counter as they flip carrds
+   */
 function updatePlayerFlipSpan(flipModification) {
   flipCount = flipCount + flipModification
 
-  let flipElement = document.getElementById("gameFlips");
-  flipElement.innerText = "Flips: " + flipCount;
+  let flipElement = document.getElementById("gameFlips")
+  flipElement.innerText = "Flips: " + flipCount
 }
 
-
-reset.addEventListener("click", resetEverything);
+/*
+   * Resets game
+   */
+reset.addEventListener("click", resetEverything)
 function resetEverything() {
   updatePlayerFlipSpan(flipCount * -1)
   updatePlayerScoreSpan(playerScore * -1)
@@ -144,10 +154,12 @@ function resetEverything() {
     updateImage(listCardDiv[i], "failedMatch")
     updateEventListener(listCardDiv[i], "add")
   }
-  gameArray.sort(() => 0.5 - Math.random());
+  gameArray.sort(() => 0.5 - Math.random())
   
 }
-
+/*
+   * Updates images on card
+   */
   function updateImage(card, flag) {
     if (flag === "matched") {
       setTimeout(() => {
@@ -163,6 +175,9 @@ function resetEverything() {
       
     }
   }
+  /*
+   * calling the make board function
+   */
   makeBoard()
 
 })
