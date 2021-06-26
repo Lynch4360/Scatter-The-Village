@@ -108,6 +108,7 @@ header {
     margin: 5px;
     cursor: pointer;
 }
+
 .game-instruction-title {
     font-weight: bold;
 }
@@ -210,11 +211,13 @@ header {
         flex-direction: column;
         align-items: center;
     }
+
     .game-card {
         width: 80px;
         height: 80px;
         margin: 5px;
     }
+
     .logo {
         font-size: 1em;
     }
